@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentes do Valorant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="valorant icon.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="logotipo">
+            <img src="valorant icon.png" alt="Logotipo do Valorant" height="50px" width="50px">
+        </div>
+        <div class="container-busca">
+            <input type="search" id="BuscaId" placeholder="Buscar agentes...">
+            <button id="botaoBusca">🔍</button>
+        </div>
+    </header>
+
+    <main>
+        <div id="carregando" class="container-carregamento">
+            <div class="carregador"></div>
+            <div id="porcentagemCarregamento">0%</div>
+        </div>
+        <div id="exibicaoAgente" style="display: none;">
+            <button id="botaoAnterior" class="botao-navegacao">&lt;</button>
+            <div id="detalhesAgente">
+                <div id="containerImagemAgente">
+                    <img id="imagemAgente" src="" alt="Imagem do Agente">
+                    <img id="iconeFuncao" class="icone-Funcao" src="" alt="Ícone do Funcao">
+                </div>
+                <div id="informacoesAgente">
+                    <h2 id="nomeAgente"></h2>
+                    <p id="FuncaoAgente"></p>
+                    <p id="descricaoAgente"></p>
+                    <div id="habilidadesAgente"></div>
+                </div>
+            </div>
+            <button id="botaoProximo" class="botao-navegacao">&gt;</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Agentes do Valorant.</p>
+        <p>Trabalho realizado por Davi Gomes e Thiago Schmitz.</p>
+    </footer>
+
+    <div id="alertaHabilidade" class="alerta-habilidade"></div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

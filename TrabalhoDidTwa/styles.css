@@ -1,0 +1,289 @@
+@font-face {
+    font-family: 'VALORANT';
+    src: url('./fontes/VALORANT-Regular.woff2') format('woff2'),
+         url('./fontes/VALORANT-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #1c1c1c;
+    color: white;
+}
+
+header {
+    background-color: #0f1923;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-busca {
+    display: flex;
+    position: relative;
+}
+
+#BuscaId {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    width: 0;
+    transition: width 0.4s ease-out;
+}
+
+#BuscaId:focus {
+    width: 200px;
+}
+
+#botaoBusca {
+    padding: 0.5rem;
+    background-color: #ff4655;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+}
+
+.container-carregamento {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    flex-direction: column;
+}
+
+.carregador {
+    border: 8px solid #1c1c1c; 
+    border-top: 8px solid #ff4655; 
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: girar 1s linear infinite;
+}
+
+#porcentagemCarregamento {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+@keyframes girar {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#exibicaoAgente {
+    display: grid;
+    grid-template-columns: 0.1fr 3fr 0.1fr;
+    align-items: center;
+    gap: 25rem; /* Depende da resolução */
+    max-width: 2200px;
+    width: 100%;
+    position: relative;
+}
+
+.botao-navegacao {
+    font-family: 'VALORANT', Arial, sans-serif;
+    background-color: #ff4655;
+    border: none;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    transition: transform 0.2s;
+}
+
+.botao-navegacao:hover {
+    transform: scale(1.1);
+}
+
+#detalhesAgente {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    background-color: #2b2b2b;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+#containerImagemAgente {
+    position: relative;
+    background-color: #333;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 530px;
+}
+
+#imagemAgente {
+    border-radius: 4px;
+    max-width: 140%;
+    max-height: 140%;
+    position: relative;
+    z-index: 1;
+}
+
+#informacoesAgente {
+    max-width: 400px;
+}
+
+#nomeAgente {
+    font-family: 'VALORANT', Arial, sans-serif;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0.5rem;
+    background-color: white;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#FuncaoAgente {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin: 1rem 0;
+}
+
+#descricaoAgente {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+#habilidadesAgente {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.icone-Funcao {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.habilidade {
+    background-color: #333;
+    border-radius: 4px;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.habilidade img {
+    max-width: 30%;
+    height: auto;
+}
+
+.habilidade:hover {
+    transform: scale(1.1);
+}
+
+.alerta-habilidade {
+    display: none;
+    position: fixed;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+}
+
+footer {
+    background-color: #0f1923;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    #exibicaoAgente {
+        grid-template-columns: 1fr;
+    }
+
+    #detalhesAgente {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #imagemAgente {
+        width: 100%;
+    }
+}
+
+/*
+Comentarios: 
+ 
+Paleta de cores: 
+O site utiliza cores escuras baseadas nas cores que o jogo Valorant, utiliza um azul marinho bem escuro para separar o conteúdo principal da página com o cabeçalho e o rodapé, tons de cinza para destacar o conteúdo do site, um vermelho bem marcante para usar de destaque em botões de interação como o de pesquisar e as setas de próximo e anterior, O branco é usado para textos e alguns elementos de destaque, proporcionando um contraste forte com o fundo escuro e garantindo a legibilidade. Cada agente tem uma cor própria associada, como roxo para Astra e laranja para Phoenix, que ajudam a diferenciar visualmente cada personagem e reforçam suas identidades únicas e dão um destaque maior ao site com a imagem dos agentes.
+
+Tipografia:
+Fonte personalizada 'VALORANT': Utilizada para o título e os nomes dos agentes. Esta fonte específica do jogo ajuda a manter a consistência com a marca Valorant e reforça a temática do site.
+
+Arial, sans-serif: Utilizada para o corpo do texto e outros elementos. É uma fonte limpa e legível, ideal para exibir informações detalhadas.
+
+Layout e Composição
+
+Cabeçalho:
+
+Logotipo: Posicionado à esquerda, ajuda a identificar imediatamente o site como relacionado ao jogo Valorant.
+Campo de Busca: Localizado à direita, facilita a pesquisa rápida de agentes. O campo de busca que se expande ao focar melhora a usabilidade sem ocupar muito espaço inicialmente.
+
+Conteúdo Principal:
+
+Carregador: Ocupa toda a tela com um círculo de carregamento centralizado e uma porcentagem de progresso, proporcionando feedback visual claro durante o carregamento.
+
+Exibição dos Agentes: Uma grade de três colunas com botões de navegação à esquerda e à direita, e os detalhes do agente no centro. Esta disposição permite a navegação fácil entre os agentes e a visualização centralizada dos detalhes.
+
+Detalhes do Agente: Organizados em um contêiner com imagem, nome, função, descrição e habilidades. A imagem do agente está à esquerda, e as informações textuais à direita, criando uma leitura fluida.
+
+Rodapé:
+Centralizados e discretos, mantendo o foco no conteúdo principal enquanto fornece informações necessárias.
+
+Justificativa das Escolhas
+Cores: As cores escuras são típicas de temas relacionados a jogos de ação e FPS, criando um ambiente imersivo e dramático. O uso de cores específicas para cada agente melhora a diferenciação visual e a associação com as características de cada personagem.
+
+Tipografia: A escolha da fonte personalizada ‘VALORANT’ ajuda a manter a identidade visual do jogo, enquanto a fonte Arial garante a legibilidade e clareza das informações.
+
+Layout e Composição: O layout foi pensado para maximizar a usabilidade e a experiência do usuário, com elementos de navegação claros, feedback visual durante o carregamento e uma apresentação organizada e atrativa dos detalhes dos agentes. A estrutura do conteúdo facilita a navegação e a descoberta de informações, enquanto mantém a consistência com a temática do jogo.
+*/
